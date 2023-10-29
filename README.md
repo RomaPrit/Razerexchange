@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CryptoExchange
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
@@ -25,3 +26,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# Razerexchange
+>>>>>>> f9df44ab47f7b7b0b2654d40ec3daddf040b3670
