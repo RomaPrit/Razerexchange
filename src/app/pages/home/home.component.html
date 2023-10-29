@@ -1,0 +1,299 @@
+<body>
+    <div class="container-fluid container-custom hidden" >
+        <div class="row ">
+
+            <div class="col  container-fluid bg-white custom-container1 " [style.pointer-events]="!isTrue ? 'none' : 'auto'">
+                <div class="logo2">
+                    <h2>Give</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style=" height:1.5em" class="">
+                        <path
+                            d="M438.6 150.6c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 96 32 96C14.3 96 0 110.3 0 128s14.3 32 32 32l306.7 0-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96zm-333.3 352c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 416 416 416c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0 41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96z" />
+                    </svg>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="quantityInput1" class="form-control" [(ngModel)]="quantity"
+                        placeholder="Enter quantity" (click)="clearSelectedCrypto()" />
+
+                </div>
+                <div *ngFor="let crypto of cryptoList.slice(0, 27)" class="d-flex align-items-center mb-2 "
+                (click)="selectCrypto(crypto)">
+                <div [class.selected]="crypto.id === selectedCryptoName" [class.hover]="isHovered === crypto.id"
+                    (click)="isHovered = crypto.id" class="wrapper">
+                    <img [src]="getImagePath(crypto.id)" alt="{{ crypto.name }} Image" width="30" height="30"
+                        class="mr-2 pr-10" />
+                    <div>
+                        
+                        {{ crypto.name }} 
+                    </div>
+                </div>
+
+
+            </div>
+            </div>
+            <div class="col container-fluid bg-white custom-container1 " [style.pointer-events]="!isTrue ? 'none' : 'auto'">
+                <div class="logo2">
+                    <h2>Take</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style=" height:1.5em">
+                        <path
+                            d="M438.6 150.6c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 96 32 96C14.3 96 0 110.3 0 128s14.3 32 32 32l306.7 0-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96zm-333.3 352c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 416 416 416c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0 41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96z" />
+                    </svg>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="quantityInput2" class="form-control" [(ngModel)]="quantity2"
+                        placeholder="Quantity" disabled=""/>
+                </div>
+                <div *ngFor="let crypto of cryptoList.slice(0, 27)" class="d-flex align-items-center mb-2 "
+                    (click)="selectCrypto2(crypto)">
+                    <div [class.selected]="crypto.id === selectedCryptoName2" [class.hover]="isHovered2 === crypto.id"
+                        (click)="isHovered2 = crypto.id" class="wrapper">
+                        <img [src]="getImagePath(crypto.id)" alt="{{ crypto.name }} Image" width="30" height="30"
+                            class="mr-2 pr-10" />
+                        <div>
+                            {{ crypto.name }} 
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col container-fluid custom-container1 bg-white ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col ">
+                            <div class="m-auto">
+                                <h2>Exchange Info</h2>
+                            </div>
+                
+                            <div *ngIf="exchangeInfo" class="bg ">
+                                <div class="" *ngIf="exchange ">
+                                    <div class="">
+                                        <span>   Exchange rate: 1 {{selectedCryptoSymbol}} = {{rates}} {{selectedCryptoSymbol2}}</span>
+                                      
+                                    </div>
+                                  
+                                    <div class="rate_info ">
+                                        <div class="namecr">
+                                            <div class="namecr1">{{selectedCryptoName}} {{selectedCryptoSymbol}}</div>
+                                            <div class="quanity">
+                                                {{quantity}} {{selectedCryptoSymbol}}
+                                            </div>
+                                        </div>
+                                        <div class="crlogo">
+                                            <img [src]="getImagePath(selectedCryptoName.toLowerCase())" alt="{{selectedCryptoName}} Image" width="35" height="35">
+                                        </div>
+                                     
+                                        <div class="crlogo">
+                                            <img [src]="getImagePath(selectedCryptoName2.toLowerCase())" alt="{{selectedCryptoName2}} Image" width="35" height="35">
+                                        </div>
+                                        <div class="namecr2">
+                                            <div class="namecr1">
+                                                {{selectedCryptoName2.toUpperCase()}} {{selectedCryptoSymbol2}}
+                                            </div>
+                                            <div class="quanity">
+                                                {{quantity2}} {{selectedCryptoSymbol2}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                
+                            <div class="form-group m-auto  ">
+                                <div class="form-group btn" *ngIf="!calculated">
+                                    <button class="btn btn-primary btn-block" (click)="calculateTotal(); selectCrypto">Calculate Total</button>
+                                </div>
+                
+                                <div class="form-group btn" *ngIf="calculated">
+                                    <div class="col   data-inputs">
+                                        <h4> Enter form </h4>
+                                        <div class="form-v2">
+                                          
+                                            <input type="text" name="give_address" class="form-control" placeholder="Your {{ selectedCryptoName }} {{ placeholderText }}" id="wallet-input-id" maxlength="255" required="" [(ngModel)]="quantity3">
+                                     
+                                        </div>
+                                        <div class="allert" id="hidden-allert-wallet">
+                                            <p class="red"></p>
+                                        </div>
+                                        <div class="form-v2">
+                                            <input type="text" name="user_email" class="form-control" placeholder="E-mail" id="user-email-input" maxlength="255"  required [(ngModel)]="userEmail" #emailInput="ngModel">
+                                            
+                                            <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+                                                <div *ngIf="emailInput.errors && emailInput.errors['required']">Email is required.</div>
+                                                <div *ngIf="emailInput.errors && emailInput.errors['email']">Invalid email format.</div>
+                                              </div>
+                                        </div>
+                                        <div class="allert" id="hidden-allert-email">
+                                            <p class="red"></p>
+                                        </div>
+                                       <div class="checkbox">
+                                        <div class="mb-16 data-input-label">
+                                            <input id="cbx" type="checkbox" [(ngModel)]="agreedToRules">
+                                            <label for="cbx">I agree with the <a href="#">rules</a>.</label>
+                                        </div>
+                                        <div class="data-input-label" >
+                                            <input id="cbx-2" type="checkbox" [(ngModel)]="agreedToPolicy">
+                                            <label for="cbx-2">I agree with the <a href="#">and KYC/AML policy</a>.</label>
+                                        </div>
+                                       </div>
+                                    </div>
+                                    <button class="btn btn-primary btn_custom" [disabled]="!(quantity3 && userEmail && agreedToRules && agreedToPolicy)">
+                                        <a [routerLink]="['/payment']" class="a_reblank" >Payment</a>
+                                    </button>
+                                    <button class="btn btn-secondary" (click)="resetCalculation()">Reset Calculation</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="hidden2">
+    <div class="container-fluid container-custom ">
+        <div class="row">
+            <div class="col container-fluid bg-white custom-container1" [style.pointer-events]="!isTrue ? 'none' : 'auto'">
+                <div class="logo2">
+                    <h2>Give</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="height: 1.5em">
+                        <path
+                            d="M438.6 150.6c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 96 32 96C14.3 96 0 110.3 0 128s14.3 32 32 32l306.7 0-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96zm-333.3 352c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 416 416 416c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0 41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96z" />
+                    </svg>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="quantityInput1" class="form-control" [(ngModel)]="quantity" placeholder="Enter quantity" (click)="clearSelectedCrypto()" />
+                </div>
+                <div *ngFor="let crypto of cryptoList.slice(0, 27)" class="d-flex align-items-center mb-2" (click)="selectCrypto(crypto)">
+                    <div [class.selected]="crypto.id === selectedCryptoName" [class.hover]="isHovered === crypto.id"
+                    (click)="isHovered = crypto.id" class="wrapper">
+                    <img [src]="getImagePath(crypto.id)" alt="{{ crypto.name }} Image" width="30" height="30"
+                        class="mr-2 pr-10" />
+                    <div>
+                        <!-- <input type="text" [(ngModel)]="crypto.wallet" placeholder="Enter wallet address" />
+                        <button (click)="saveWallet(crypto)">Save Wallet</button> -->
+                        {{ crypto.name }} 
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid container-custom">
+        <div class="row">
+            <div class="col container-fluid bg-white custom-container1" [style.pointer-events]="!isTrue ? 'none' : 'auto'">
+                <div class="logo2">
+                    <h2>Take</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="height: 1.5em">
+                        <path
+                        d="M438.6 150.6c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.7 96 32 96C14.3 96 0 110.3 0 128s14.3 32 32 32l306.7 0-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96zm-333.3 352c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 416 416 416c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0 41.4-41.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-96 96c-12.5 12.5-12.5 32.8 0 45.3l96 96z" />
+                    </svg>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="quantityInput2" class="form-control" [(ngModel)]="quantity2" placeholder="Quantity" disabled="" />
+                </div>
+                <div *ngFor="let crypto of cryptoList.slice(0, 27)" class="d-flex align-items-center mb-2" (click)="selectCrypto2(crypto)">
+                    <div [class.selected]="crypto.id === selectedCryptoName2" [class.hover]="isHovered2 === crypto.id"
+                    (click)="isHovered2 = crypto.id" class="wrapper">
+                    <img [src]="getImagePath(crypto.id)" alt="{{ crypto.name }} Image" width="30" height="30"
+                        class="mr-2 pr-10" />
+                    <div>
+                        {{ crypto.name }} 
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid container-custom">
+        <div class="row">
+            <div class="col container-fluid custom-container1 bg-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="m-auto">
+                                <h2>Exchange Info</h2>
+                            </div>
+                            <div *ngIf="exchangeInfo" class="bg">
+                                <div *ngIf="exchange">
+                                    <div>
+                                        <span>Exchange rate: 1 {{selectedCryptoSymbol}} = {{rates}} {{selectedCryptoSymbol2}}</span>
+                                    </div>
+                                    <div class="rate_info">
+                                        <div class="namecr">
+                                            <div class="namecr1">{{selectedCryptoName}} {{selectedCryptoSymbol}}</div>
+                                            <div class="quanity">
+                                                {{quantity}} {{selectedCryptoSymbol}}
+                                            </div>
+                                        </div>
+                                        <div class="crlogo">
+                                            <img [src]="getImagePath(selectedCryptoName.toLowerCase())" alt="{{selectedCryptoName}} Image" width="35" height="35">
+                                        </div>
+                                     
+                                        <div class="crlogo">
+                                            <img [src]="getImagePath(selectedCryptoName2.toLowerCase())" alt="{{selectedCryptoName2}} Image" width="35" height="35">
+                                        </div>
+                                        <div class="namecr2">
+                                            <div class="namecr1">
+                                                {{selectedCryptoName2.toUpperCase()}} {{selectedCryptoSymbol2}}
+                                            </div>
+                                            <div class="quanity">
+                                                {{quantity2}} {{selectedCryptoSymbol2}}
+                                            </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group m-auto">
+                                <div class="form-group btn" *ngIf="!calculated">
+                                    <button class="btn btn-primary btn-block" (click)="calculateTotal(); selectCrypto">Calculate Total</button>
+                                </div>
+                                <div class="form-group btn" *ngIf="calculated">
+                                    <div class="col   data-inputs">
+                                        <h4> Enter form </h4>
+                                        <div class="form-v2">
+                                          
+                                            <input type="text" name="give_address" class="form-control" placeholder="Your {{ selectedCryptoName }} {{ placeholderText }}" id="wallet-input-id" maxlength="255" required="" [(ngModel)]="quantity3">
+                                     
+                                        </div>
+                                        <div class="allert" id="hidden-allert-wallet">
+                                            <p class="red"></p>
+                                        </div>
+                                        <div class="form-v2">
+                                            <input type="text" name="user_email" class="form-control" placeholder="E-mail" id="user-email-input" maxlength="255"  required [(ngModel)]="userEmail" #emailInput="ngModel">
+                                            
+                                            <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+                                                <div *ngIf="emailInput.errors && emailInput.errors['required']">Email is required.</div>
+                                                <div *ngIf="emailInput.errors && emailInput.errors['email']">Invalid email format.</div>
+                                              </div>
+                                        </div>
+                                        <div class="allert" id="hidden-allert-email">
+                                            <p class="red"></p>
+                                        </div>
+                                       <div class="checkbox">
+                                        <div class="mb-16 data-input-label">
+                                            <input id="cbx" type="checkbox" [(ngModel)]="agreedToRules">
+                                            <label for="cbx">I agree with the <a href="#">rules</a>.</label>
+                                        </div>
+                                        <div class="data-input-label" >
+                                            <input id="cbx-2" type="checkbox" [(ngModel)]="agreedToPolicy">
+                                            <label for="cbx-2">I agree with the <a href="#">and KYC/AML policy</a>.</label>
+                                        </div>
+                                       </div>
+                                    </div>
+                                    <button class="btn btn-primary btn_custom" [disabled]="!(quantity3 && userEmail && agreedToRules && agreedToPolicy)">
+                                        <a [routerLink]="['/payment']" class="a_reblank" >Payment</a>
+                                    </button>
+                                    <button class="btn btn-secondary" (click)="resetCalculation()">Reset Calculation</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   
+  
+</body>

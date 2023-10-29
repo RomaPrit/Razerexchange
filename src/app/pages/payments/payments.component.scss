@@ -1,0 +1,163 @@
+body {
+    background-color: #fafafa;
+    padding-top: 50px;
+   padding-bottom: 300px;
+  }
+  .color{
+    color: #8f8f8f;
+}
+.m{
+  text-align: center;
+  margin-bottom: 10px;
+
+}
+.container-fluid {
+    width: 60%;
+    background-color: white;
+    font-family: 'ST', sans-serif;
+    border-radius: 15px;
+    padding: 40px;
+  }
+  .logo{
+    display: flex;
+    justify-content: space-between;
+font-size: 20px;
+.color{
+    color: #8f8f8f;
+}
+
+
+  }
+  .custom-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .info{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px;
+    width: 100%;
+    height: 75px;
+    background-color: #313131;
+    color: white;
+    border-radius: 15px;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+    word-break: break-word;
+    word-wrap: break-word;
+   
+.crlogo{
+    margin: 0 10px;
+}
+}
+.namecr  {
+  p{
+    word-break: break-word;
+    word-wrap: break-word;
+  }
+  word-wrap: break-word; /* або word-break: break-word; */
+}
+.c2{
+  font-weight: 400;
+  color: #4d4d4d;
+}
+.c3{
+  font-weight: 700;
+    color: #000;
+    margin-left: 0.5rem;
+    word-break: break-all;
+}
+p{
+  img{
+    margin-right: 10px;
+  }
+}
+.fs{
+justify-content: flex-start;
+}
+.color2{
+    color: rgb(42, 52, 60);
+}
+.namecr{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 15px;
+}
+.Attention{display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    text-align: center;
+    width: 100%;
+    background-color:#fafafa;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+.determineted{
+  text-align: center;
+  margin-bottom: 40px;
+}
+.detail_payment{
+  border-top: 1px rgb(42, 52, 60) solid;
+  .row{
+    display: flex;
+    padding: 15px 20px;
+  }
+ 
+}
+.custom_btn{
+    width: 49%;
+color: white;
+font-size: 20px;
+
+a{
+    text-decoration: none;
+    color: white;
+}
+}
+.right{
+  display: flex;
+  flex-direction: column;
+ 
+
+}
+.cl{
+  display: flex;
+  flex-direction: column;
+  padding: 0 30px;
+}
+.main_button{
+  display: flex;
+
+  justify-content: space-between;
+  margin: 0 auto;
+}
+  .progress{
+    height: 10px;
+  }
+  .progress-bar {
+    width: 0; /* Initial width is 0 */
+    animation: fillAnimation 900s linear forwards; /* Animation properties */
+  }
+  @keyframes fillAnimation {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @media (max-width: 750x){
+.row{
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap:wrap ;
+}
+.container-fluid{
+  width: 100%!important;
+}
+  }

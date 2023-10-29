@@ -27,12 +27,17 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/images"
             ],
             "styles": [
-              "src/styles.scss"
+             
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -56,6 +61,7 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
+             
               "namedChunks": true
             }
           },
@@ -93,6 +99,7 @@
               "src/assets"
             ],
             "styles": [
+             
               "src/styles.scss"
             ],
             "scripts": []
@@ -100,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "506d04fa-1e57-4c99-b3e5-4928803dfbe6"
   }
 }

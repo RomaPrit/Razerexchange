@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'ST';
+    src: url(./fonts/PTSans-Bold.ttf);
+}
+
+.navbar{
+    background-color: #fafafa;
+    font-family: 'ST', sans-serif;
+    font-size: 18px;
+}
+.navbar-brand{
+    font-size: 10px;
+
+    width: 20%;
+}
+.custom-container{
+    width: 79%;
+    
+}
+.admin{
+    position: absolute;
+    top:100px;
+    right:  0;
+    list-style: none;
+}
+@media (max-width: 900px) {
+   a{
+    svg{
+        height: 200%;
+        width: 200%;
+    }
+   }
+  }

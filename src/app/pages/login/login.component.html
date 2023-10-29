@@ -1,0 +1,32 @@
+<body>
+
+    <div class="container login-container">
+      <form [formGroup]="loginForm"  >
+        <span class="login_name">
+          <h1>Login</h1>
+        </span>
+        <div class="form-group">
+            <label for="exampleInputEmail1" class="form-label"  >Email address</label>
+            <input type="email" class="form-control" id="exampleInpuEmail1" name="email" #email='ngModel' ngModel required="" [ngClass]="{'is-invalid': email.touched && email.invalid}">
+            <div class="alert alert-danger" *ngIf="email.touched && email.invalid">Email Cannot be Empty</div>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+    
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" #password='ngModel' ngModel required="" [ngClass]="{'is-invalid': password.touched && password.invalid}">
+            <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Password Cannot be Empty</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <span class="reg_link"> Dont have any account?
+          <a href="#" class="link">Register</a>
+        </span>
+      </form>
+     
+    </div>
+    
+    
+    
+    </body>
+    
+    
