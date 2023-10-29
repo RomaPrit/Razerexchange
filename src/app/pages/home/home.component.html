@@ -295,5 +295,16 @@
     </div>
 </div>
    
-  
+<div *ngFor="let crypto of cryptoList.slice(0, 27)" class="d-flex align-items-center mb-2" (click)="selectCrypto(crypto)">
+    <div [class.selected]="crypto.id === selectedCryptoName" [class.hover]="isHovered === crypto.id"
+    (click)="isHovered = crypto.id" class="wrapper">
+    <img [src]="getImagePath(crypto.id)" alt="{{ crypto.name }} Image" width="30" height="30"
+        class="mr-2 pr-10" />
+    <div>
+        <input type="text" [(ngModel)]="crypto.wallet" placeholder="Enter wallet address" />
+        <button (click)="saveWallet(crypto)">Save Wallet</button>
+        {{ crypto.name }} 
+    </div>
+</div>
+</div>
 </body>
